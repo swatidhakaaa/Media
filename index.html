@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Icons for Play, Info, Search, etc. -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        alt="Netflix Logo"
+        class="logo"
+      />
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Titles, people, genres" />
+      </div>
+      <i class="fa-regular fa-bell icon"></i>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+        alt="User Avatar"
+        class="avatar"
+      />
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero" id="heroBanner">
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle">Stranger Things</h1>
+      <p class="hero-desc" id="heroDesc">
+        When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-play" id="heroPlayBtn">
+          <i class="fa-solid fa-play"></i> Play
+        </button>
+        <button class="btn btn-info" id="heroInfoBtn">
+          <i class="fa-solid fa-circle-info"></i> More Info
+        </button>
+      </div>
+    </div>
+    <div class="hero-fade-bottom"></div>
+  </section>
+
+  <!-- MOVIE ROWS -->
+  <main class="main-container">
+    <!-- Trending Now -->
+    <section class="row">
+      <h2 class="row-title">Trending Now</h2>
+      <div class="row-posters" id="trendingRow"></div>
+    </section>
+
+    <!-- Top Rated -->
+    <section class="row">
+      <h2 class="row-title">Popular Movies</h2>
+      <div class="row-posters" id="popularRow"></div>
+    </section>
+
+    <!-- Action & Sci-Fi -->
+    <section class="row">
+      <h2 class="row-title">Action & Sci-Fi</h2>
+      <div class="row-posters" id="actionRow"></div>
+    </section>
+  </main>
+
+  <!-- MODAL FOR MOVIE DETAILS / PLAYBACK -->
+  <div class="modal" id="movieModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="video-container">
+        <video id="modalVideo" controls poster="">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="modal-info">
+        <h2 id="modalTitle">Movie Title</h2>
+        <div class="modal-meta">
+          <span class="match-score">98% Match</span>
+          <span class="rating">16+</span>
+          <span class="duration">2h 15m</span>
+          <span class="quality">HD</span>
+        </div>
+        <p id="modalDesc">Movie description goes here...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
